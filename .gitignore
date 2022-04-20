@@ -1,0 +1,11 @@
+__pycache__
+.vscode
+artifacts
+mlruns
+output
+output_no_mlflow
+venv
+mlflow.db
+config_settings.yaml
+mlflow.db
+src/__pycache__

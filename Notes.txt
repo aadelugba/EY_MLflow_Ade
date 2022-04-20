@@ -1,0 +1,18 @@
+# In code set mlflow tracking uri using
+mlflow.set_tracking_uri("http://localhost:5000")
+
+# In cmd use SQL Lite as mlflow backend
+mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root ./artifacts --host 0.0.0.0
+
+
+# TO SERVE MODEL:
+# 1 . Set envt variables: Enter d follwoing in cmd
+# set MLFLOW_TRACKING_URI=http://localhost:5000
+
+# 2. run server
+# mlflow models serve -m "models:/Diabetes Prediction Model/Staging" --port 1234 --no-conda
+
+# 3. In PostMan, send POST request to the localhost
+# url ==> http://localhost:1234/invocations
+# Body ==>  {"data" : [[0, 171, 80, 34, 23, 43.509726, 1.213191, 21]]}
+

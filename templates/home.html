@@ -1,0 +1,103 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+    <!-- Starts image section -->
+    <div class="row justify-content-md-center mb-4">
+        <h2 class='text-primary'>Predict Diabetes</h2>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/diabetic.png')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong>Diabetic</strong></p>
+                   </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+                <img src="{{url_for('static', filename='images/not_diabetic.jpg')}}" class="img-thumbnail" />
+                <div class="caption">
+                     <p><strong>Not Diabetic</strong></p>
+                   </div>
+            </div>
+        </div>
+    </div>
+    <!-- Ends image section -->
+    
+    <!-- Starts form section -->
+    <div class="form-container ">
+        <form class="form-horizontal" action = "/predict/" method="post">
+        
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="Pregnancies">Pregnancies?:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="Pregnancies" name="Pregnancies">
+              </div>
+            </div>
+            
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="PlasmaGlucose">Plasma Glucose:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="PlasmaGlucose" name="PlasmaGlucose">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="DiastolicBloodPressure">Diastolic Blood Pressure:</label>
+              <div class="col-sm-4">
+                <input type="text" class="form-control" id="DiastolicBloodPressure" name="DiastolicBloodPressure">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <label class="control-label col-sm-2" for="TricepsThickness">Triceps Thickness:</label>
+              <div class="col-sm-4">          
+                <input type="text" class="form-control" id="TricepsThickness" name="TricepsThickness">
+              </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="SerumInsulin">Serum Insulin:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="SerumInsulin" name="SerumInsulin">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="BMI">BMI:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="BMI" name="BMI">
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="DiabetesPedigree">DiabetesPedigree:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="DiabetesPedigree" name="DiabetesPedigree">
+                </div>
+            </div>            
+
+            <div class="form-group row">
+                <label class="control-label col-sm-2" for="Age">Age:</label>
+                <div class="col-sm-4">          
+                  <input type="text" class="form-control" id="Age" name="Age">
+                </div>
+            </div>   
+
+            <div class="form-group row"> 
+            <label class="control-label col-sm-2" for="">&nbsp;</label>                
+              <div class="col-sm-offset-2 col-sm-4">
+                <button type="submit" class="btn btn-primary">Predict</button>
+              </div>
+            </div>
+
+          </form>
+        <!-- Ends form section -->
+                
+    </div>
+
+
+{% endblock %}
